@@ -55,16 +55,19 @@
 									</header>
 									<div class="posts">
 										<article>
-											<a href="/events" class="image"><img src="/images/Capture14.png" alt="" /></a>
-											<h3><a href="/events">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
-											<p>На 20 ноември 2024г. се проведе 25-ият Световен ден на географските информационни системи (ГИС) у нас. В България се организира най-мащабният образователен ГИС конкурс „Изучаваме света с ГИС“ от Esri България под патронажа на МОН и в партньорство с над 30 водещи академични, браншови и медийни организации.</p>
+											<a th:href="|/event/${events.get(0).getSlug()}|" class="image"><img th:src="${events.get(0).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/event/${events.get(0).getSlug()}|" th:text="${events.get(0).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(0).getFields().shortText}"></p>
+											<ul class="actions">
+												<li><a th:href="|/event/${events.get(0).getSlug()}|" class="button">Прочети още</a></li>
+											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/images/pic02.jpg" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<a th:href="|/event/${events.get(1).getSlug()}|" class="image"><img th:src="${events.get(0).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/event/${events.get(1).getSlug()}|" th:text="${events.get(0).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(1).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
+												<li><a th:href="|/event/${events.get(1).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>

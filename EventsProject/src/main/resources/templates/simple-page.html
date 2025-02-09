@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${page.seoTitle}"></title>
+  <meta property="og:title" th:content="${page.seoTitle}"/>
+</head>
+<body>
+<div style="display:flex; flex-direction: column; align-items: center;">
+  <h1 th:text="${page.headline}"></h1>
+  <img width="500px" th:src="${page.heroImage}"/>
+  <p>
+    <button th:text="${page.callToAction}"></button>
+  </p>
+  <h2>Customers Love Us!</h2>
+  <div style="display:flex;">
+    <th:block th:each="logo : ${page.customerLogos}">
+      <img th:src="${logo.logo_image}" width="100px"/>
+    </th:block>
+  </div>
+</div>
+</body>
+</html>
