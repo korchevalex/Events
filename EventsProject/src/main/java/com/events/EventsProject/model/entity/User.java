@@ -1,4 +1,4 @@
-package com.events.EventsProject.entity;
+package com.events.EventsProject.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,6 +19,12 @@ public class User{
 
     @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
 
     @Column(unique = true, nullable = false)
     private String email;

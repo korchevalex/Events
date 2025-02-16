@@ -35,24 +35,24 @@
 
 									<div class="row">
 										<div class="col-3 col-12-medium">
-											<h3>Дата и час</h3>
-											<p th:text="${page.date}">01/01/2025 12:00</p>
+											<h2>Дата и час</h2>
+											<h3 th:text="${page.getFormattedDate()}">01/01/2025 12:00</h3>
 										</div>
 										<div class="col-3 col-12-medium">
-											<h3>Организатор</h3>
-											<p th:text="${page.organiser}">Директор</p>
+											<h2>Организатор</h2>
+											<h3 th:text="${page.organiser}">Директор</h3>
 										</div>
 										<div class="col-3 col-12-medium">
-											<h3>Гост/Лектор</h3>
-											<p th:text="${page.guest}">Г-н Иванов</p>
+											<h2>Участници</h2>
+											<h3 th:text="${page.participants}">Г-н Иванов</h3>
 										</div>
 										<div class="col-3 col-12-medium">
-											<h3>Адрес</h3>
-											<p th:text="${page.address}">СПГЕ</p>
+											<h2>Адрес</h2>
+											<h3 th:text="${page.address}">СПГЕ</h3>
 										</div>
 									</div>
 
-									<span class="image main"><img th:src="${page.image}" alt="" /></span>
+									<hr/>
 
 									<div th:utext="${page.text}"></div>
 								</section>

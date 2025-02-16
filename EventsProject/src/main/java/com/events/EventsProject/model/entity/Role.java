@@ -1,7 +1,7 @@
-package com.events.EventsProject.entity;
+package com.events.EventsProject.model.entity;
 
 
-import com.events.EventsProject.enums.UserRoleEnum;
+import com.events.EventsProject.model.enums.UserRoleEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

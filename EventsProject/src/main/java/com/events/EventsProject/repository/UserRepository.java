@@ -1,6 +1,6 @@
 package com.events.EventsProject.repository;
 
-import com.events.EventsProject.entity.User;
+import com.events.EventsProject.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

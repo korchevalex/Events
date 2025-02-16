@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Editorial by HTML5 UP</title>
 		<meta charset="utf-8" />
@@ -29,8 +29,9 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1>Събития в СПГЕ<br />
-											"Джон Атанасов"</h1>
+											<h2 sec:authorize="isAuthenticated()"><span>Добре дошли,</span> <span th:text="${fullName}"></span>!</h2>
+											<h1>СПГЕ "Джон Атанасов" - <br />
+											дейности и мероприятия</h1>
 											<h2 class="pt-4">УСПЯВАМЕ ВЪВ ВСИЧКО -<br/>
 												с грижа към всеки ученик,<br/>
 												с внимание към всеки учител,<br/>
@@ -38,8 +39,9 @@
 												ЗА НАС Е ВАЖЕН ВСЕКИ.
 											</h2>
 											<ul class="actions">
-												<li><a href="#" class="button primary">Вход</a></li>
-												<li><a href="#" class="button">Регистрация</a></li>
+												<li sec:authorize="isAnonymous()"><a href="/users/login" class="button primary">Вход</a></li>
+												<li sec:authorize="isAnonymous()"><a href="/users/register" class="button">Регистрация</a></li>
+												<li sec:authorize="isAuthenticated()"><a href="/events" class="button primary">Събития</a></li>
 											</ul>
 										</header>
 									</div>
@@ -55,51 +57,51 @@
 									</header>
 									<div class="posts">
 										<article>
-											<a th:href="|/event/${events.get(0).getSlug()}|" class="image"><img th:src="${events.get(0).getFields().image}" alt="" /></a>
-											<h3><a th:href="|/event/${events.get(0).getSlug()}|" th:text="${events.get(0).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<a th:href="|/events/${events.get(0).getSlug()}|" class="image"><img th:src="${events.get(0).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(0).getSlug()}|" th:text="${events.get(0).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
 											<p th:text="${events.get(0).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a th:href="|/event/${events.get(0).getSlug()}|" class="button">Прочети още</a></li>
+												<li><a th:href="|/events/${events.get(0).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>
-											<a th:href="|/event/${events.get(1).getSlug()}|" class="image"><img th:src="${events.get(0).getFields().image}" alt="" /></a>
-											<h3><a th:href="|/event/${events.get(1).getSlug()}|" th:text="${events.get(0).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<a th:href="|/events/${events.get(1).getSlug()}|" class="image"><img th:src="${events.get(1).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(1).getSlug()}|" th:text="${events.get(1).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
 											<p th:text="${events.get(1).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a th:href="|/event/${events.get(1).getSlug()}|" class="button">Прочети още</a></li>
+												<li><a th:href="|/events/${events.get(1).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/images/pic03.jpg" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<a th:href="|/events/${events.get(2).getSlug()}|" class="image"><img th:src="${events.get(2).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(2).getSlug()}|" th:text="${events.get(2).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(2).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
+												<li><a th:href="|/events/${events.get(2).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/images/pic04.jpg" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<a th:href="|/events/${events.get(2).getSlug()}|" class="image"><img th:src="${events.get(2).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(2).getSlug()}|" th:text="${events.get(2).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(2).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
+												<li><a th:href="|/events/${events.get(2).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/images/pic05.jpg" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<a th:href="|/events/${events.get(2).getSlug()}|" class="image"><img th:src="${events.get(2).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(2).getSlug()}|" th:text="${events.get(2).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(2).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
+												<li><a th:href="|/events/${events.get(2).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/images/pic06.jpg" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<a th:href="|/events/${events.get(2).getSlug()}|" class="image"><img th:src="${events.get(2).getFields().image}" alt="" /></a>
+											<h3><a th:href="|/events/${events.get(2).getSlug()}|" th:text="${events.get(2).getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
+											<p th:text="${events.get(2).getFields().shortText}"></p>
 											<ul class="actions">
-												<li><a href="#" class="button">More</a></li>
+												<li><a th:href="|/events/${events.get(2).getSlug()}|" class="button">Прочети още</a></li>
 											</ul>
 										</article>
 									</div>

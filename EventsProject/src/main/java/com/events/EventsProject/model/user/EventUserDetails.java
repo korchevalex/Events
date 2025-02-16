@@ -1,4 +1,4 @@
-package com.events.EventsProject.user;
+package com.events.EventsProject.model.user;
 
 import lombok.Getter;
 import org.springframework.security.core.userdetails.User;

@@ -6,7 +6,7 @@
 -->
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Editorial by HTML5 UP</title>
+  <title>Generic - Editorial by HTML5 UP</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -25,21 +25,36 @@
       <header th:replace="~{fragments/header.html}" id="header">
       </header>
 
-      <!-- Section -->
+      <!-- Content -->
       <section>
-        <header class="major">
-          <h2>Събития</h2>
+        <header class="main">
+          <h2 th:text="${page.title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</h2>
         </header>
-        <div class="posts">
-          <article th:each="event : ${events}">
-            <a th:href="|/events/${event.getSlug()}|" class="image"><img th:src="${event.getFields().image}" alt="" /></a>
-            <h3><a th:href="|/events/${event.getSlug()}|" th:text="${event.getFields().title}">Участие на ученици от СПГЕ “Джон Атанасов” в Световен ден на географските информационни системи (ГИС) у нас</a></h3>
-            <p th:text="${event.getFields().shortText}"></p>
-            <ul class="actions">
-              <li><a th:href="|/events/${event.getSlug()}|" class="button">Прочети още</a></li>
-            </ul>
-          </article>
+
+        <hr/>
+
+        <div class="row">
+          <div class="col-3 col-12-medium">
+            <h2>График</h2>
+            <h3 th:text="${page.schedule}">01/01/2025 12:00</h3>
+          </div>
+          <div class="col-3 col-12-medium">
+            <h2>Организатор</h2>
+            <h3 th:text="${page.organiser}">Директор</h3>
+          </div>
+          <div class="col-3 col-12-medium">
+            <h2>Участници</h2>
+            <h3 th:text="${page.participants}">Г-н Иванов</h3>
+          </div>
+          <div class="col-3 col-12-medium">
+            <h2>Адрес</h2>
+            <h3 th:text="${page.address}">СПГЕ</h3>
+          </div>
         </div>
+
+        <hr/>
+
+        <div th:utext="${page.text}"></div>
       </section>
 
     </div>
